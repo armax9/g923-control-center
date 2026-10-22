@@ -1,5 +1,7 @@
 # Build and setup
 
+To install the ready-made app, download the macOS ARM64 ZIP from [Releases](https://github.com/armax9/g923-control-center/releases), unzip it and drag the app into Applications. The binary download requires Apple Silicon, macOS 27 or newer and Python 3.10 or newer. The instructions below are for building from source.
+
 The source release contains two sibling projects:
 
 ```text
@@ -63,12 +65,13 @@ A reviewed Wine payload directory contains `catalog.json`, the matching Unix/PE 
 python3 scripts/package-control-center.py \
   --payloads build/public-components \
   --wine-transport /path/to/reviewed-wine-payload \
-  --output /path/to/app-build
+  --output /path/to/app-build \
+  --public-release --llvm-strip /path/to/llvm-strip
 ```
 
 This creates an app artifact without installation. Add `--install '/path/to/G923 Control Center.app'` only to install explicitly. `--accepted-local` is a private recovery option for an existing development installation, not a source-release build.
 
-The current publication is source-only. Accepted local Wine binaries retain debug build paths; public binary assets need path removal, new hash review and validation. The source package contains no original Logitech SDK or commercial CrossOver runtime.
+For binary distribution, prepare a stripped Wine pair with `scripts/prepare-public-transport.py --prepared /path/to/reviewed-original-payload --llvm-strip /path/to/llvm-strip --output /path/to/public-wine-payload --update-catalog`. The tool checks the original hashes and unchanged runtime sections, records the transformed hashes and packages the corresponding source. The public app flag strips component debug data, signs Mach-O tools and rejects personal build paths. The Logitech SDK and commercial CrossOver runtime are not included.
 
 ## Set up DiRT Rally 2.0
 

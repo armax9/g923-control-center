@@ -1,6 +1,6 @@
 # Publication checks
 
-This release is a source preview. Gameplay acceptance covers G923 PlayStation / PC with DiRT Rally 2.0 and ETS2 on the setup recorded in the [README](../../README.md).
+This release includes a downloadable Apple Silicon app and corresponding source. Gameplay acceptance covers G923 PlayStation / PC with DiRT Rally 2.0 and ETS2 on the setup recorded in the [README](../../README.md).
 
 ## Source package
 
@@ -14,7 +14,7 @@ Exclude original Logitech SDK and CrossOver binaries, games, bottles, profiles, 
 
 1. Build and test the staged source, including its separate synthesis component.
 2. Check relative documentation links, archive contents, licenses and component hashes.
-3. Scan source and binary strings for personal paths and identifiers. The current accepted local Wine binaries retain debug build paths; strip or path-map them, then validate their new hashes before public binary distribution.
+3. Scan source and binary strings for personal paths and identifiers. Use `prepare-public-transport.py` for Wine and `package-control-center.py --public-release --llvm-strip /path/to/llvm-strip` for the app. Verify transformed hashes and unchanged Wine runtime sections.
 4. Attach release notes with the exact tested setup. Keep additional games marked untested/pending and clean installation on a second Mac marked pending.
 5. Upload only the reviewed source and release assets.
 

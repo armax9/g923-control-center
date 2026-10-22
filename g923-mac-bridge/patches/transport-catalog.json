@@ -28,11 +28,11 @@
       "modules": {
         "x86_64-unix/winebus.so": {
           "path": "cx-preview-27.0.0.41069-wine-11.17/winebus.so",
-          "sha256": "b8d60dce48b6fb768eb50e41950ffbfa99d29fb63e2d03dd764c338438f1453c"
+          "sha256": "7b30ba344bbebcf4966bd6d6e5e98ccd8305d5b65f152f64943701904475e1c9"
         },
         "x86_64-windows/winebus.sys": {
           "path": "cx-preview-27.0.0.41069-wine-11.17/winebus.sys",
-          "sha256": "ecaf49c5ccea05ddad1d626f414ea9f761eb48bdf51e21c1f74512f7cd7146d8"
+          "sha256": "c120a9aa5841056a5fe2ccab003ec46e6d9494dfeedd42fbb510ea6493523bb0"
         }
       },
       "acceptance": {
@@ -40,6 +40,10 @@
         "game": "DiRT Rally 2.0",
         "date": "2026-10-20",
         "scope": "User-confirmed game TRUEFORCE and FFB with the original Logitech SDK. Other CrossOver builds require separate compatibility review."
+      },
+      "distribution": {
+        "transform": "Debug information stripped; Mach-O ad-hoc signed. Runtime section contents verified unchanged.",
+        "hardware_test": "Original unstripped pair accepted; no new physical test."
       }
     }
   ]

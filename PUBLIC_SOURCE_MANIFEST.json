@@ -28,9 +28,9 @@
       "sha256": "ad32d26f9fbd3302b7d8e68789a9c0affa393ad8abec8313d39ac07084253ae0"
     },
     "README.md": {
-      "bytes": 5778,
+      "bytes": 6640,
       "mode": "0644",
-      "sha256": "0a9dd2656e7857be91bb6fc0e365824dd25524c693e1f2bb7b4ec964ea44ef3f"
+      "sha256": "7c365e2e6da2e23657b1f26e8ce3d110fe5c8dcb174e0384e14a8dcdde04e3a3"
     },
     "g923-mac-bridge/.gitignore": {
       "bytes": 128,
@@ -78,9 +78,9 @@
       "sha256": "ad4eaca2194158fac1961632e9246a086b901d46fe3651d665c440f1655539d7"
     },
     "g923-mac-bridge/README.md": {
-      "bytes": 5682,
+      "bytes": 6544,
       "mode": "0644",
-      "sha256": "43dbeca289bf321d2219a801723849b650ecfc78a29cbca240283b899b0ef9ee"
+      "sha256": "f8c4d77c32891178cbd7e481268533e0baf7b8ca387171516736062a2103fec8"
     },
     "g923-mac-bridge/assets/control-center/AppIcon.icns": {
       "bytes": 1221456,
@@ -113,19 +113,19 @@
       "sha256": "676d69cee4c2276f1cee83344330e5a20bd1f36049809bb84d04e99cdaea3451"
     },
     "g923-mac-bridge/docs/WINE_TRANSPORT_SOURCE.md": {
-      "bytes": 5511,
+      "bytes": 6158,
       "mode": "0644",
-      "sha256": "d5d214e4ba762a94f0b9f74d011637c1a349c1a42d18dafeca386fbf85c907dd"
+      "sha256": "15113ab56733a03336c33c4447531f45f63d60fa20ab0ea552be087e1551a177"
     },
     "g923-mac-bridge/docs/publication/BUILD_AND_SETUP.md": {
-      "bytes": 6236,
+      "bytes": 6897,
       "mode": "0644",
-      "sha256": "9da1127fe556d6be831e7adc85f13a22568221ea895342405a3b27f44d120e66"
+      "sha256": "467b5180e62fedd30ddc635d50e9f34862ede44cf3b28c169480513507ad7388"
     },
     "g923-mac-bridge/docs/publication/PUBLICATION_TECHNICAL_PREP.md": {
-      "bytes": 1672,
+      "bytes": 1763,
       "mode": "0644",
-      "sha256": "f49c33d30488dd8ffec08023e14a8d0d828e35f00218df75f06cdcf746263f4c"
+      "sha256": "c771b20c965113fd64aaf6eb5bcd35a7a776a2d98f925cb20960d7867c1cc7c2"
     },
     "g923-mac-bridge/docs/publication/PULL_REQUEST.md": {
       "bytes": 1597,
@@ -133,9 +133,9 @@
       "sha256": "c059250a3e7e3a6533f3c7a26bc88caa3021b510f7940fa1559bdb3a87efd78f"
     },
     "g923-mac-bridge/docs/publication/RELEASE.md": {
-      "bytes": 2952,
+      "bytes": 3742,
       "mode": "0644",
-      "sha256": "3682347cf4bf9ff9be4d137e0d9f045ee682f1241d43e1477e519940c1d5f4f9"
+      "sha256": "8e370ff1f22b35b6a1f4e8c35d8c55aa9843066f4920b04b7f3440c631a7b58c"
     },
     "g923-mac-bridge/docs/publication/SUPPORT.md": {
       "bytes": 2810,
@@ -168,9 +168,9 @@
       "sha256": "cad04fdef7137ed22de70a5846959c04e9dc626125a5e64a7a6746c8522b7b6b"
     },
     "g923-mac-bridge/patches/transport-catalog.json": {
-      "bytes": 2054,
+      "bytes": 2290,
       "mode": "0644",
-      "sha256": "883bc697d2d50cc00ad175bb639c08ccb94a0752eecacd9c267ad93921778c04"
+      "sha256": "ce95b66db76d7031b89fef669e2458fd490d3ae7dce38136c16464349689f8b1"
     },
     "g923-mac-bridge/patches/wine-source-reference.json": {
       "bytes": 1110,
@@ -233,9 +233,14 @@
       "sha256": "8960eeb700e59bbf896a148c766cbfce36e42e9b648f76efcda4ee6b1280cef2"
     },
     "g923-mac-bridge/scripts/package-control-center.py": {
-      "bytes": 22417,
+      "bytes": 24681,
       "mode": "0644",
-      "sha256": "5c4b11421353ba2fcbcab7a7efb7c99cdd0dddca3fcdb375842462c2fde2cf73"
+      "sha256": "ba6592e11c79cb91adc88f4607c27463d1bccfe0882f31c8b44fa2fac264eff7"
+    },
+    "g923-mac-bridge/scripts/prepare-public-transport.py": {
+      "bytes": 3907,
+      "mode": "0644",
+      "sha256": "a295e5c8a242d02630041db8000a9f7e29123f63bfb175653c83d9ff30f88bdd"
     },
     "g923-mac-bridge/scripts/prepare-publication.py": {
       "bytes": 15793,
@@ -268,9 +273,9 @@
       "sha256": "f3bcc80dcb04a8af8711941e6d7300b95b7d2f524693f1cacf2766fa3caa99c7"
     },
     "g923-mac-bridge/scripts/test-package-control-center.py": {
-      "bytes": 20312,
+      "bytes": 21324,
       "mode": "0644",
-      "sha256": "7fb98e03a1067fc9d8eeb36bfcdd759fe3f26cbb74171862873961b8413bf694"
+      "sha256": "4287a08cedecd1171e0efac054e767de58b4e3df9194cd5e16645566938933a8"
     },
     "g923-mac-bridge/scripts/test-prepare-publication.py": {
       "bytes": 16484,

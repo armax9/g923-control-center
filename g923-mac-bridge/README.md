@@ -2,9 +2,9 @@
 
 **Native TRUEFORCE in DiRT Rally 2.0 and emulated engine vibration in ETS2, with ordinary Force Feedback, on macOS Apple Silicon and CrossOver.**
 
-An open-source control center for Logitech G923 PlayStation / PC, based on [crossover-ffb](https://github.com/0xbiel/crossover-ffb). Current source preview: **0.6.2**.
+An open-source control center for Logitech G923 PlayStation / PC, based on [crossover-ffb](https://github.com/0xbiel/crossover-ffb). Current release: **0.6.2**.
 
-Download the source preview and complete Wine source from [Releases](https://github.com/armax9/g923-control-center/releases). Build instructions are below.
+Download the **macOS app** from [Releases](https://github.com/armax9/g923-control-center/releases). Source code and complete Wine source are available there too.
 
 ## What works
 
@@ -26,6 +26,16 @@ ETS2 steering FFB and engine intensity have separate controls. **Engine intensit
 - Windows DiRT Rally 2.0 and ETS2 through Steam in CrossOver.
 
 Both game integrations were tested in gameplay. Other wheels, CrossOver 26 and a clean installation on a second Mac have not been tested. Live engine adjustment has software and localhost-stream verification; it is not an additional hardware test.
+
+## Install
+
+1. Download **G923ControlCenter-0.6.2-macOS-arm64.zip** from Releases and unzip it.
+2. Drag **G923 Control Center.app** into **Applications**.
+3. Install [Python 3.10 or newer](https://www.python.org/downloads/macos/) if it is not already installed. No compiler or source build is required for the app download.
+4. Open the app. This build is ad-hoc signed and not notarized; macOS may require approving the first launch in **System Settings → Privacy & Security → Open Anyway**.
+5. Allow Input Monitoring if requested, then complete the selected game's setup in the app.
+
+The app download requires **Apple Silicon and macOS 27 or newer**, plus user-installed CrossOver. The included native TRUEFORCE transport supports **CrossOver Preview 27.0.0.41069 / Wine 11.17**. Import the original Logitech SDK separately for native TRUEFORCE; see below.
 
 ## Use
 

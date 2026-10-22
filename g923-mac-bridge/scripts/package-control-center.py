@@ -15,7 +15,7 @@ RUNTIME_HELPERS = ('auto_bridge', 'bootstrap', 'discovery', 'ets2', 'ets2_connec
                    'game_settings', 'game_sandbox', 'installed_play', 'main_steam',
                    'portable_paths', 'profile_store', 'registry_overrides', 'sdk_game',
                    'native_transport', 'native_connection', 'sdk_setup', 'pe_inventory',
-                   'native_setup', 'transport_setup')
+                   'native_setup', 'transport_setup', 'ets2_manual')
 
 LIVE_MESCON_SHA256 = '2fe6c5481c6dbf0c4513a077812ac3db07bac34d2d8c647c33beacd496ca7bb5'
 TRANSPORT_MODULES = {'x86_64-unix/winebus.so', 'x86_64-windows/winebus.sys'}
@@ -224,9 +224,37 @@ def component_sources(directory):
     return sources
 
 
-def package(root, output, install=None, component_root=None, transport_root=None, accepted_local=False):
+def public_binary(path, pe_strip=None):
+    magic = path.read_bytes()[:4]
+    if magic[:2] == b'MZ':
+        if pe_strip is None: raise ValueError('Public PE payloads require --llvm-strip.')
+        subprocess.run([str(pe_strip), '--strip-debug', str(path)], check=True)
+        return
+    if magic != b'\xcf\xfa\xed\xfe':
+        return
+    subprocess.run(['/usr/bin/strip', '-S', '-x', str(path)], check=True)
+    subprocess.run(['codesign', '--force', '--sign', '-', str(path)], check=True)
+
+
+def audit_public_app(app):
+    for path in app.rglob('*'):
+        if path.is_symlink():
+            if os.path.isabs(os.readlink(path)) or not path.resolve().is_relative_to(app.resolve()):
+                raise ValueError('Public bundle symlink escapes the app')
+            continue
+        if not path.is_file(): continue
+        data = path.read_bytes()
+        if b'/Users/' in data or b'/Volumes/' in data:
+            raise ValueError('Personal build path in public bundle: ' + str(path.relative_to(app)))
+        if hashlib.sha256(data).hexdigest() == '2468bdafe64c09ff42ef26f09e49f2096321bb687467323aafb3f0672fb83315':
+            raise ValueError('Original Logitech SDK must not be redistributed')
+
+
+def package(root, output, install=None, component_root=None, transport_root=None, accepted_local=False, public_release=False, pe_strip=None):
     if accepted_local and component_root is not None:
         raise ValueError('Choose source-built payloads or --accepted-local, not both.')
+    if public_release and accepted_local:
+        raise ValueError("Public releases require source-built components.")
     sources = None if accepted_local else component_sources(component_root or root / 'build/public-components')
     live_synth = root.parent / 'mescon-telemetry/build/live-engine-candidate/mescon-synth'
     if accepted_local and (not live_synth.is_file() or digest(live_synth) != LIVE_MESCON_SHA256):
@@ -249,6 +277,7 @@ def package(root, output, install=None, component_root=None, transport_root=None
     mac.mkdir(parents=True)
     resources.mkdir(parents=True)
     shutil.copy2(binary / 'CrossoverFFBApp', mac / 'CrossoverFFBApp')
+    if public_release: public_binary(mac / 'CrossoverFFBApp', pe_strip)
     shutil.copy2(root / 'assets/control-center/AppIcon.icns', resources / 'AppIcon.icns')
     # Python sources are standard-library-only. No private profiles, registries or SDK binaries.
     helpers = tools / 'sdk-lab/tools'
@@ -260,7 +289,11 @@ def package(root, output, install=None, component_root=None, transport_root=None
     licenses.mkdir()
     for source, name in [(root / 'vendor/crossover-ffb/LICENSE', 'crossover-ffb.txt'),
                          (root / 'LICENSE', 'G923-bridge.txt'),
-                         (root.parent / 'mescon-telemetry/COPYING', 'mescon-telemetry.txt')]:
+                         (root.parent / 'mescon-telemetry/COPYING', 'mescon-telemetry.txt'),
+                         (root.parent / 'mescon-telemetry/LICENSES/Rust-MIT.txt', 'Rust-MIT.txt'),
+                         (root / 'vendor/wheelio/LICENSE.txt', 'Wheelio.txt'),
+                         (root / 'vendor/trueforce/COPYING', 'libtrueforce.txt'),
+                         (root / 'vendor/CrossFFB-reference/LICENSE', 'CrossFFB.txt')]:
         if source.is_file():
             shutil.copy2(source, licenses / name)
     for source in (root / 'LICENSES').glob('*'):
@@ -309,14 +342,15 @@ def package(root, output, install=None, component_root=None, transport_root=None
             raise RuntimeError('Required release payload is missing: ' + name + '. Build the bridge components first.')
         target = payloads / name
         shutil.copy2(source, target)
+        if public_release: public_binary(target, pe_strip)
         manifest['files'][name] = {'path': name, 'sha256': digest(target)}
     (payloads / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     bundle_wine_transport(root, payloads, resources, prepared=transport_root, local_provenance=accepted_local)
     shutil.copy2(payloads / 'dinput8.dll', resources / 'dinput8.dll')
     info = dict(CFBundleExecutable='CrossoverFFBApp', CFBundleIdentifier='local.g923.controlcenter',
                 CFBundleName='G923 Control Center', CFBundleIconFile='AppIcon', CFBundleDevelopmentRegion='en',
-                CFBundlePackageType='APPL', CFBundleShortVersionString='0.6.2', CFBundleVersion='9',
-                LSMinimumSystemVersion='13.0', LSUIElement=True,
+                CFBundlePackageType='APPL', CFBundleShortVersionString='0.6.2', CFBundleVersion='10' if public_release else '9',
+                LSMinimumSystemVersion='27.0' if public_release else '13.0', LSUIElement=True,
                 NSInputMonitoringUsageDescription='Read Logitech wheel input and status.')
     with (app / 'Contents/Info.plist').open('wb') as handle:
         plistlib.dump(info, handle)
@@ -324,7 +358,8 @@ def package(root, output, install=None, component_root=None, transport_root=None
     # system security attributes are changed.
     for attribute in ('com.apple.FinderInfo', 'com.apple.ResourceFork'):
         subprocess.run(['xattr', '-r', '-d', attribute, str(app)], capture_output=True)
-    # Keep accepted backend bytes intact; the app's outer signature seals resources.
+    if public_release: audit_public_app(app)
+    # The app's outer signature seals its manifest-verified resources.
     subprocess.run(['codesign', '--force', '--sign', '-', str(app)], check=True)
     subprocess.run(['codesign', '--verify', '--strict', str(app)], check=True)
     if install is not None:
@@ -354,11 +389,13 @@ def main():
     group.add_argument('--payloads', type=Path, help='Manifest-verified source build; defaults to build/public-components')
     group.add_argument('--accepted-local', action='store_true', help='Explicit recovery build using local accepted session components; not a public release')
     parser.add_argument('--wine-transport', type=Path, help='Reviewed Wine catalog, module pair and complete source package')
+    parser.add_argument('--public-release', action='store_true', help='Strip debug information, sign bundled tools and audit public binary contents')
+    parser.add_argument('--llvm-strip', type=Path, help='LLVM strip for public Windows payload debug data')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     output = (args.output or root / 'build/control-center').resolve()
     output.mkdir(parents=True, exist_ok=True)
-    print(package(root, output, args.install, component_root=args.payloads, transport_root=args.wine_transport, accepted_local=args.accepted_local))
+    print(package(root, output, args.install, component_root=args.payloads, transport_root=args.wine_transport, accepted_local=args.accepted_local, public_release=args.public_release, pe_strip=args.llvm_strip))
 
 
 if __name__ == '__main__':

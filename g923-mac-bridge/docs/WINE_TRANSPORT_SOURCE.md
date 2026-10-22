@@ -61,3 +61,12 @@ Ship the source package alongside the transport modules and include Wine's `COPY
 5. Obtain explicit user readiness for force tests. Verify native game TRUEFORCE, ordinary FFB, input/pedals/shifter, stop/quit and rollback. Keep the previous accepted entry available.
 
 Only the G923 PlayStation / PC and the cataloged CrossOver Preview build have hardware acceptance in this project. Finding another installed CrossOver build does not make its transport compatible.
+
+## Public binary packaging
+
+The app download uses stripped copies of the accepted modules. Runtime section contents match the accepted pair; removal of debug data and ad-hoc signing change the file hashes:
+
+- Unix: `7b30ba344bbebcf4966bd6d6e5e98ccd8305d5b65f152f64943701904475e1c9`
+- PE: `c120a9aa5841056a5fe2ccab003ec46e6d9494dfeedd42fbb510ea6493523bb0`
+
+`scripts/prepare-public-transport.py` verifies the original hashes and runtime sections, produces the public pair and corresponding source, and can update the catalog after review. This packaging transformation has software verification; no additional physical wheel acceptance is claimed.

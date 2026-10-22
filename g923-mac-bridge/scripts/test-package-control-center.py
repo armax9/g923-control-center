@@ -66,6 +66,27 @@ def rewrite_source_bundle(path, change, extra=None):
 
 
 class PackageTests(unittest.TestCase):
+    def test_public_bundle_rejects_private_paths(self):
+        with tempfile.TemporaryDirectory() as folder:
+            app = Path(folder)
+            (app / 'tool').write_bytes(b'compiled debug data /Users/' + b'example/private/build')
+            with self.assertRaisesRegex(ValueError, 'Personal build path'):
+                packager.audit_public_app(app)
+
+    def test_public_bundle_rejects_external_symlink(self):
+        with tempfile.TemporaryDirectory() as folder:
+            app = Path(folder)
+            (app / 'source').symlink_to('/private/tmp')
+            with self.assertRaisesRegex(ValueError, 'symlink escapes'):
+                packager.audit_public_app(app)
+
+    def test_public_bundle_accepts_internal_source_link(self):
+        with tempfile.TemporaryDirectory() as folder:
+            app = Path(folder)
+            (app / 'source.tar.xz').write_bytes(b'complete public source')
+            (app / 'source-link').symlink_to('source.tar.xz')
+            packager.audit_public_app(app)
+
     def fixture(self, directory):
         root = directory / 'source'
         binary = directory / 'compiled'
