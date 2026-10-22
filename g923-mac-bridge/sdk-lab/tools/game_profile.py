@@ -85,7 +85,7 @@ def relay_action(action,exe,prefix,appid):
     print('Relay hash verified; game hardware acceptance pending')
 
 def scs_action(action,exe,prefix,appid):
-    if appid!=270880:raise ValueError('ETS2 uses its dedicated DLAA-preserving installer')
+    if appid!=270880:raise ValueError('ETS2 uses its dedicated installer')
     stopped(exe)
     source=TOP/'outputs/mescon-telemetry/build/logi_tf_scs.dll'
     target=exe.parent/'plugins/logi_tf_scs.dll'

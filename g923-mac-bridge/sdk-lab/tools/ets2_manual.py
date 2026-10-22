@@ -53,6 +53,6 @@ def configure():
  result=registry(['add',KEY,'/v','winmm','/t','REG_SZ','/d',VALUE,'/f'])
  if result.returncode or current_override()!=VALUE:raise RuntimeError('ETS2 WinMM registration failed; installation journal preserved')
  ets2.state()
- print('ETS2 manual loader installed: per-game WinMM override and file opt-in. DLAA preserved. No game or motor started.')
+ print('ETS2 manual loader installed: per-game WinMM override and file opt-in. No game or motor started.')
 
 if __name__=='__main__':configure()

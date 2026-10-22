@@ -36,6 +36,6 @@ This is telemetry-based emulation, not a game's native Logitech TRUEFORCE integr
 
 ## Validation
 
-The ETS2 integration was confirmed by the user on G923 PlayStation / PC, M3 Max, macOS 27.0.1 and CrossOver Preview 27.0.0.41069, with engine vibration and ordinary FFB together. Live intensity changes were verified by software and localhost-stream tests without resetting the synth or FFB owner. Those live-gain tests are not a separate physical-wheel acceptance. Other game adapters remain untested in gameplay here.
+The ETS2 integration was tested in gameplay on G923 PlayStation / PC, M3 Max, macOS 27.0.1 and CrossOver Preview 27.0.0.41069, with engine vibration and ordinary FFB together. Live intensity changes were verified by software and localhost-stream tests without resetting the synth or FFB owner. Those live-gain tests are not a separate physical-wheel acceptance. Other game adapters remain untested in gameplay here.
 
 Sources: [mescon SCS plugin](https://github.com/mescon/logitech-trueforce-linux-driver/blob/972274bdce293419c058eb10b796feb232bfd9ef/docs/SCS_PLUGIN.md), [SCS telemetry API](https://modding.scssoft.com/wiki/Documentation/Engine/SDK/Telemetry).

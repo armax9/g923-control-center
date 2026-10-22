@@ -172,7 +172,7 @@ struct GameDetailPage: View {
                 } else { Text("Integration pending").foregroundStyle(.secondary) }
             }
             if accepted {
-                Text(id == 227300 ? "Input / FFB bridge · SCS telemetry. DLAA preserved." : "Logitech SDK · CrossOver transport · game integration.")
+                Text(id == 227300 ? "Input / FFB bridge · SCS telemetry." : "Logitech SDK · CrossOver transport · game integration.")
                     .font(.caption).foregroundStyle(.secondary).padding(.vertical, 10)
                 if !installed, let detail = model.entryInstallationDetails[game.id], !detail.isEmpty { Text(detail).font(.caption).foregroundStyle(.orange).textSelection(.enabled).padding(.bottom, 8) }
             }

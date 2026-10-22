@@ -7,9 +7,9 @@ Native TRUEFORCE in DiRT Rally 2.0 and emulated engine vibration in Euro Truck S
 | Game | Result |
 | --- | --- |
 | DiRT Rally 2.0 | Native Logitech TRUEFORCE, ordinary FFB, steering, pedals and H-pattern shifter |
-| Euro Truck Simulator 2 | Engine vibration, steering resistance/return, impacts and input; existing DLAA `dinput8.dll` preserved |
+| Euro Truck Simulator 2 | Engine vibration, steering resistance/return, impacts and input |
 
-Confirmed by the user on **G923 PlayStation / PC**, M3 Max, macOS 27.0.1 and **CrossOver Preview 27.0.0.41069 / Wine 11.17**. Native TRUEFORCE uses the original **Logitech SDK 1.3.12 x64**. Other wheels and game integrations remain untested or pending.
+Tested in gameplay on **G923 PlayStation / PC**, M3 Max, macOS 27.0.1 and **CrossOver Preview 27.0.0.41069 / Wine 11.17**. Native TRUEFORCE uses the original **Logitech SDK 1.3.12 x64**. Other wheels and game integrations remain untested or pending.
 
 ## Included
 

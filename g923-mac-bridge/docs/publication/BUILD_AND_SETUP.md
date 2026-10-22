@@ -84,7 +84,7 @@ The current publication is source-only. Accepted local Wine binaries retain debu
 ## Set up ETS2
 
 1. Select the discovered ETS2 installation and use **Install components** with the game closed.
-2. Setup installs the separate bridge and SCS telemetry files, preserving an existing DLAA `dinput8.dll`.
+2. Setup installs the bridge and SCS telemetry components.
 3. Check the installation and bridge status. Open Steam and the game yourself, then select G923 and assign/calibrate its pedals.
 4. Adjust **Engine intensity** on the game's app page while driving. New settings start at 10%; zero mutes the engine signal. Engine enable/intensity changes retain the synth process and ordinary FFB transport.
 5. Change **FFB strength** with the game closed. Its default is 100% of the game's original strength.

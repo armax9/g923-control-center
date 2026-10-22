@@ -51,10 +51,10 @@ class PortableSetup(unittest.TestCase):
         self.assertFalse(manifest['native_tf_direction_measured'])
         self.assertIn('hardware accepted',manifest['tf_motor_sign_source'])
 
-    def test_dlaa_kept_byte_for_byte_and_second_install_is_idempotent(self):
-        mod=self.game.parent/'dinput8.dll';mod.write_bytes(b'important DLAA mod')
+    def test_existing_library_kept_byte_for_byte_and_second_install_is_idempotent(self):
+        mod=self.game.parent/'dinput8.dll';mod.write_bytes(b'existing library')
         self.install();self.install()
-        self.assertEqual(mod.read_bytes(),b'important DLAA mod')
+        self.assertEqual(mod.read_bytes(),b'existing library')
         self.assertEqual(len(load_registry(self.registry)['profiles']),1)
 
     def test_foreign_winmm_never_overwritten_or_partial_files_left(self):
@@ -66,7 +66,7 @@ class PortableSetup(unittest.TestCase):
         self.assertFalse((self.game.parent/'g923_bridge.dll').exists())
         self.assertFalse(self.registry.exists())
 
-    def test_registry_failure_rolls_back_files_without_touching_dlaa(self):
+    def test_registry_failure_rolls_back_files_without_touching_existing_library(self):
         mod=self.game.parent/'dinput8.dll';mod.write_bytes(b'keep')
         before=(self.bottle/'user.reg').read_bytes()
         with patch.object(bootstrap,'register',side_effect=OSError('disk write failed')):
@@ -93,7 +93,7 @@ class PortableSetup(unittest.TestCase):
         self.assertFalse((native.parent/'dinput8.dll').exists())
         self.assertFalse(self.registry.exists())
 
-    def test_changed_dlaa_blocks_repair_and_preserves_new_mod(self):
+    def test_changed_library_blocks_repair_and_preserves_new_file(self):
         mod=self.game.parent/'dinput8.dll';mod.write_bytes(b'first version');self.install()
         mod.write_bytes(b'new version')
         with self.assertRaisesRegex(ValueError,'dinput8 changed'):self.install()

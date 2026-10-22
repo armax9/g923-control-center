@@ -30,4 +30,4 @@ Original Logitech SDK DLLs and commercial CrossOver runtime files are not redist
 
 Windows builds use Zig/LLVM and MinGW components under their respective licenses. The source does not include these toolchains. Binary packaging must retain the applicable runtime notices from `LICENSES/` and the toolchain distribution.
 
-`sdk-lab`'s `fixture-not-logitech.dll` is an original test double, not Logitech SDK code or a compatible replacement. No Torqer source, binary code or assets are included.
+`sdk-lab`'s `fixture-not-logitech.dll` is an original test double, not Logitech SDK code or a compatible replacement.

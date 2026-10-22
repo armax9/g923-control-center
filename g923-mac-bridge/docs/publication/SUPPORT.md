@@ -7,7 +7,7 @@
 | DiRT Rally 2.0 | Native Logitech TRUEFORCE SDK | TRUEFORCE, ordinary FFB, steering, three pedals and H-pattern shifter |
 | Euro Truck Simulator 2 | Ordinary game FFB + emulated engine vibration | Steering resistance/return, impacts, engine vibration and input |
 
-Both have automatic runtime profiles. The user confirmed these results on **G923 PlayStation / PC, M3 Max, macOS 27.0.1, CrossOver Preview 27.0.0.41069 and the patched Wine 11.17 transport**. Native TRUEFORCE uses the original **SDK 1.3.12 x64**.
+Both have automatic runtime profiles and were tested in gameplay on **G923 PlayStation / PC, M3 Max, macOS 27.0.1, CrossOver Preview 27.0.0.41069 and the patched Wine 11.17 transport**. Native TRUEFORCE uses the original **SDK 1.3.12 x64**.
 
 Other wheels, CrossOver 26, other macOS versions and clean installation on a second Mac have no project hardware acceptance. Live engine adjustment has software and localhost-stream verification.
 

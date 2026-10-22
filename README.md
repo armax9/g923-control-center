@@ -15,7 +15,7 @@ Download the source preview and complete Wine source from [Releases](https://git
 
 Native TRUEFORCE carries the game's Logitech SDK signal. Emulation generates engine harmonics from RPM and throttle and sends them through the wheel's high-frequency output. ETS2 steering and road forces still come from the game's ordinary FFB.
 
-ETS2 preserves an existing DLAA `dinput8.dll`. Its steering FFB and engine intensity have separate controls. **Engine intensity defaults to 10% and can be adjusted while driving**, without restarting the bridge. Zero mutes the engine vibration.
+ETS2 steering FFB and engine intensity have separate controls. **Engine intensity defaults to 10% and can be adjusted while driving**, without restarting the bridge. Zero mutes the engine vibration.
 
 ## Tested setup
 
@@ -25,7 +25,7 @@ ETS2 preserves an existing DLAA `dinput8.dll`. Its steering FFB and engine inten
 - Original Logitech TRUEFORCE SDK **1.3.12 x64** from Windows G HUB.
 - Windows DiRT Rally 2.0 and ETS2 through Steam in CrossOver.
 
-Both game paths were confirmed by the user in gameplay. Other wheels, CrossOver 26 and a clean installation on a second Mac have not been tested. Live engine adjustment has software and localhost-stream verification; it is not an additional hardware test.
+Both game integrations were tested in gameplay. Other wheels, CrossOver 26 and a clean installation on a second Mac have not been tested. Live engine adjustment has software and localhost-stream verification; it is not an additional hardware test.
 
 ## Use
 
@@ -49,7 +49,7 @@ Select DiRT and use its **Native TRUEFORCE setup** card:
 
 The card shows SDK, transport and game integration status separately. **Refresh status** checks the installation. **Wine source & build guide** opens an in-app guide; **Open source folder** opens the complete Wine source package, patches, licenses and build script.
 
-For ETS2, select the game and use **Install components** if needed. Setup preserves the DLAA loader and uses separate bridge and telemetry files.
+For ETS2, select the game and use **Install components** if needed. Setup installs the bridge and telemetry components.
 
 ## Other games
 

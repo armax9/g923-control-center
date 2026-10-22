@@ -8,7 +8,7 @@ Include project sources, tests, public guides, patches, licenses and the separat
 
 Include the complete corresponding Wine source archive with any distributed patched Wine modules. Keep the source and binary assets in the same release. See the [Wine source guide](../WINE_TRANSPORT_SOURCE.md).
 
-Exclude original Logitech SDK and CrossOver binaries, games, bottles, profiles, registry backups, captures, personal controls, logs, cached toolchains and development work directories. Scan staged content and Git history; ignore rules alone do not remove previously committed data. Torqer source and assets are not part of this project.
+Exclude original Logitech SDK and CrossOver binaries, games, bottles, profiles, registry backups, captures, personal controls, logs, cached toolchains and development work directories. Scan staged content and Git history; ignore rules alone do not remove previously committed data.
 
 ## Before upload
 

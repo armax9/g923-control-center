@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-"""ETS2 telemetry-emulation candidate; preserves the user's DLAA dinput8.dll."""
+"""ETS2 input, Force Feedback and telemetry-driven engine vibration."""
 import argparse,datetime,hashlib,json,os,secrets,shutil,subprocess,time,struct,tempfile
 from pathlib import Path
 from game_sandbox import ROOT,windows
@@ -52,7 +52,7 @@ def prepare():
  for src,name in [(ROOT/'build/winmm-chain/winmm.dll','winmm.dll'),(TOP/'outputs/mescon-telemetry/build/logi_tf_scs.dll','logi_tf_scs.dll'),(ROOT/'build/ets2-swift/debug/G923ClassicLab','G923TelemetryLab'),(TOP/'outputs/mescon-telemetry/build/mescon-synth','mescon-synth')]:shutil.copy2(src,INSTALL/name)
  if original_hash is not None:shutil.copy2(GAME/'dinput8.dll',INSTALL/'DLAA-dinput8-backup.dll')
  m={'mode':'mescon_telemetry_emulation','app_id':'227300','game_exe':str(GAME/'eurotrucks2.exe'),'preserved_dlaa_sha':original_hash,'source_bottle':str(SOURCE_BOTTLE) if SOURCE_BOTTLE else None,'runner_path':str(RUNNER_PATH) if RUNNER_PATH else None,'mapping':mapping,'installed_files':{},'game_settings_changed':False,'hardware_accepted':False,'native_tf_direction_measured':False,'synth':'Original mescon EngineSynth, GPL-2.0-only, separate UDP process','installed':False}
- (INSTALL/'manifest.json').write_text(json.dumps(m,indent=2)+'\n');print('Prepared; original DLAA untouched')
+ (INSTALL/'manifest.json').write_text(json.dumps(m,indent=2)+'\n');print('ETS2 components prepared')
 
 def install():
  processes=subprocess.run(['/bin/ps','-axo','comm='],capture_output=True,text=True,check=True).stdout
@@ -65,7 +65,7 @@ def install():
  for source,target in targets.items():
   path=GAME/target;path.parent.mkdir(exist_ok=True);shutil.copy2(INSTALL/source,path);m['installed_files'][target]=sha(path);(INSTALL/'manifest.json').write_text(json.dumps(m,indent=2)+'\n')
  verify_preserved(m,GAME)
- m['installed']=True;(INSTALL/'manifest.json').write_text(json.dumps(m,indent=2)+'\n');print('Added WinMM chain + bridge + SCS plugin; DLAA unchanged')
+ m['installed']=True;(INSTALL/'manifest.json').write_text(json.dumps(m,indent=2)+'\n');print('Installed ETS2 bridge and SCS telemetry plugin')
 
 def env(m=None):
  from portable_paths import bottle_environment
@@ -191,7 +191,7 @@ def run(m, launch_game=True, classic_only=False, crossffb=False, engine_vibratio
   if launch_game:launch('game',command+['--dll','winmm=n,b;dinput8=n,b',str(GAME/'eurotrucks2.exe'),'-rdevice','dx11'],env=e,cwd=GAME)
   if not launch_game:print('BRIDGE_LISTENING: Start ETS2 yourself from Steam. Waiting for the game bridge; VR mode is your choice.',flush=True)
   print('ETS2 transport: '+('classic FFB only (engine emulation disabled)' if classic_only else 'combined FFB + mescon engine emulation'),flush=True)
-  print('ETS2: telemetry emulation is not native game TRUEFORCE. DLAA is preserved.\nGame force gain '+str(ffb_strength)+'%; full device range; no experimental force ceiling. Engine emulation '+('disabled' if classic_only else 'enabled at '+str(engine_vibration)+'%')+'. Game settings are unchanged.\nStop: use the stop button in G923 Control Center. Logs: '+str(logdir),flush=True)
+  print('ETS2: telemetry emulation is not native game TRUEFORCE.\nGame force gain '+str(ffb_strength)+'%; full device range; no experimental force ceiling. Engine emulation '+('disabled' if classic_only else 'enabled at '+str(engine_vibration)+'%')+'. Game settings are unchanged.\nStop: use the stop button in G923 Control Center. Logs: '+str(logdir),flush=True)
   from ets2_connection import ConnectionMonitor
   monitor=ConnectionMonitor();positions={};next_status=0
   while not stop.exists():
@@ -244,10 +244,10 @@ def main():
    from ets2_manual import restore
    restore(m)
   for name in m['installed_files']:component_path(GAME,name).unlink(missing_ok=True)
-  m['installed']=False;(INSTALL/'manifest.json').write_text(json.dumps(m,indent=2)+'\n');print('Bridge modules removed; DLAA dinput8 was not modified');return
+  m['installed']=False;(INSTALL/'manifest.json').write_text(json.dumps(m,indent=2)+'\n');print('ETS2 bridge components removed');return
  if a.action=='stop':(INSTALL/'stop').touch();print('ETS2 bridge stop requested');return
  m=state()
- if a.action=='check':print('DLAA hash unchanged; installed components match');return
+ if a.action=='check':print('ETS2 installation verified');return
  if not a.user_ready:p.error('Explicit user readiness required for motor/game')
  if a.action=='calibrate':return calibrate(m)
  settings=for_game(227300,a.settings_file)

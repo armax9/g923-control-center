@@ -1,6 +1,6 @@
 # Control Center app icon
 
-Original vector artwork: a three-spoke steering wheel with an audio waveform hub, rendered in blue and cyan on a dark navy macOS tile. No external artwork, fonts, game logos, or Torqer assets are used.
+Original vector artwork: a three-spoke steering wheel with an audio waveform hub, rendered in blue and cyan on a dark navy macOS tile.
 
 The editable source is `scripts/render-control-center-icon.swift`. Regenerate both assets from the project directory:
 

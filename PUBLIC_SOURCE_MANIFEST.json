@@ -28,9 +28,9 @@
       "sha256": "ad32d26f9fbd3302b7d8e68789a9c0affa393ad8abec8313d39ac07084253ae0"
     },
     "README.md": {
-      "bytes": 5858,
+      "bytes": 5778,
       "mode": "0644",
-      "sha256": "172d44eafc0a688a7519b698dd5826436378f9c7f85f488929ecffd70a0ffab4"
+      "sha256": "0a9dd2656e7857be91bb6fc0e365824dd25524c693e1f2bb7b4ec964ea44ef3f"
     },
     "g923-mac-bridge/.gitignore": {
       "bytes": 128,
@@ -73,14 +73,14 @@
       "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
     },
     "g923-mac-bridge/NOTICE.md": {
-      "bytes": 3765,
+      "bytes": 3711,
       "mode": "0644",
-      "sha256": "8a6ad15fbb480376e137596800677053f5b176a1f24a5a01bed8014eda309037"
+      "sha256": "ad4eaca2194158fac1961632e9246a086b901d46fe3651d665c440f1655539d7"
     },
     "g923-mac-bridge/README.md": {
-      "bytes": 5762,
+      "bytes": 5682,
       "mode": "0644",
-      "sha256": "9500cfa421aee34c7bfb6d1a185b18373ca38f7830a3fc7ef765eb848cae4040"
+      "sha256": "43dbeca289bf321d2219a801723849b650ecfc78a29cbca240283b899b0ef9ee"
     },
     "g923-mac-bridge/assets/control-center/AppIcon.icns": {
       "bytes": 1221456,
@@ -93,9 +93,9 @@
       "sha256": "8de34bb931a08e39fc550c25ecbfe0f108a437a2ed722403a13e8ebca4bc9fdb"
     },
     "g923-mac-bridge/assets/control-center/README.md": {
-      "bytes": 730,
+      "bytes": 663,
       "mode": "0644",
-      "sha256": "337db80f59d38ca95de61ec54335a75c3993f365cbdc94904d5c483c1d54d1e9"
+      "sha256": "0e6f240dc8d18e6822dfbec5a5c99be9dde2d14d0738bf6266dc1d3a4e1a3b9c"
     },
     "g923-mac-bridge/docs/LOGITECH_SDK_SETUP.md": {
       "bytes": 4525,
@@ -118,29 +118,29 @@
       "sha256": "d5d214e4ba762a94f0b9f74d011637c1a349c1a42d18dafeca386fbf85c907dd"
     },
     "g923-mac-bridge/docs/publication/BUILD_AND_SETUP.md": {
-      "bytes": 6283,
+      "bytes": 6236,
       "mode": "0644",
-      "sha256": "ff200d6213b6051b235d11b1852dd682852bda9fccf705243c39763ca4a6fe76"
+      "sha256": "9da1127fe556d6be831e7adc85f13a22568221ea895342405a3b27f44d120e66"
     },
     "g923-mac-bridge/docs/publication/PUBLICATION_TECHNICAL_PREP.md": {
-      "bytes": 1727,
+      "bytes": 1672,
       "mode": "0644",
-      "sha256": "0cb05d07eb212762a164ba109640cd343b2e894ea420e96663e997bd62aa1083"
+      "sha256": "f49c33d30488dd8ffec08023e14a8d0d828e35f00218df75f06cdcf746263f4c"
     },
     "g923-mac-bridge/docs/publication/PULL_REQUEST.md": {
-      "bytes": 1627,
+      "bytes": 1597,
       "mode": "0644",
-      "sha256": "7aa6f3047147cd82f100f015dc50f958f0c163bffb973761bb8231afbd599542"
+      "sha256": "c059250a3e7e3a6533f3c7a26bc88caa3021b510f7940fa1559bdb3a87efd78f"
     },
     "g923-mac-bridge/docs/publication/RELEASE.md": {
-      "bytes": 2994,
+      "bytes": 2952,
       "mode": "0644",
-      "sha256": "627d16cf06733ee7ddf39e03a32b9ec26e09ba016341dceddc999f7083a1664e"
+      "sha256": "3682347cf4bf9ff9be4d137e0d9f045ee682f1241d43e1477e519940c1d5f4f9"
     },
     "g923-mac-bridge/docs/publication/SUPPORT.md": {
-      "bytes": 2816,
+      "bytes": 2810,
       "mode": "0644",
-      "sha256": "fbff789a229bd20aa697c51ee052af3d3ebfdd316bd0e7617280e2e72fa837d1"
+      "sha256": "e741c2fc7f327dd515855d92700d10015e860897bb924a493417f8a1739ff10f"
     },
     "g923-mac-bridge/docs/upstream-lock.json": {
       "bytes": 712,
@@ -373,9 +373,9 @@
       "sha256": "eab53e34cdcbf6981799418d11090a10f7c5f22507d43b4f01d3e991a8e636f1"
     },
     "g923-mac-bridge/sdk-lab/tests/test_bootstrap.py": {
-      "bytes": 16278,
+      "bytes": 16302,
       "mode": "0644",
-      "sha256": "eb8e18e77e2c01e7982ddbb88a980f3908e318951b375be7efbedc1c299edb35"
+      "sha256": "64323d7673c29ddf95e01ca3ceca5160ad96b046ead3ae07108e117177fd6ac2"
     },
     "g923-mac-bridge/sdk-lab/tests/test_classic_install.py": {
       "bytes": 2019,
@@ -473,9 +473,9 @@
       "sha256": "5bf9e0ea3f68e9fa85815b28dc1a1ccb458e760be68ca08f5eb7e0787b496986"
     },
     "g923-mac-bridge/sdk-lab/tests/test_portable_backend.py": {
-      "bytes": 6553,
+      "bytes": 6556,
       "mode": "0644",
-      "sha256": "49944fffbb4e0c6910a256850b83824f1b05f1da9f900189edb9a2959117b97c"
+      "sha256": "91cfc737fc0a3aa720fa69a4b6e07d38bfdd8eb807e265bead7522fd4bb0ec3e"
     },
     "g923-mac-bridge/sdk-lab/tests/test_profile_store.py": {
       "bytes": 7899,
@@ -568,9 +568,9 @@
       "sha256": "87a9978432eba6b57c6d984a8bc43c523cb6f198c0cafb495bfd1e6a4100e857"
     },
     "g923-mac-bridge/sdk-lab/tools/ets2.py": {
-      "bytes": 17003,
+      "bytes": 16913,
       "mode": "0644",
-      "sha256": "86df4c404f022be9e63ffbc4ab80d1c9ddc3272617fb456ba16d0915ef35a3b1"
+      "sha256": "f6b1162eee6a36d98c711b9177422eeb2ae0b866f39fd903ae80f87a70d5a3d1"
     },
     "g923-mac-bridge/sdk-lab/tools/ets2_connection.py": {
       "bytes": 846,
@@ -578,9 +578,9 @@
       "sha256": "7199b1b4a8d646212ead4f887cf57b5408fe398995793cd4c19c0e143494151e"
     },
     "g923-mac-bridge/sdk-lab/tools/ets2_manual.py": {
-      "bytes": 3083,
+      "bytes": 3067,
       "mode": "0644",
-      "sha256": "ef829bce6bb41f8b2ccf57e9a93723c9f7a80d7f8881c22621af39729cc0e46c"
+      "sha256": "d8ec491fd2a2a860028dc59eb7c2acf775d66fe2c96cc0fb3448695404920ef5"
     },
     "g923-mac-bridge/sdk-lab/tools/ets2_sdk.py": {
       "bytes": 3734,
@@ -593,9 +593,9 @@
       "sha256": "660401b8d3a60438eb089adf30cc4c6c05860d97bffe6929782edabe1e28e8aa"
     },
     "g923-mac-bridge/sdk-lab/tools/game_profile.py": {
-      "bytes": 7488,
+      "bytes": 7472,
       "mode": "0644",
-      "sha256": "2208f7819882e66c40ed8af0192309ed5907cac52b2727bb3ec55cbfe8c46bb9"
+      "sha256": "fc89039a94289919e877188dc14edf8a1dc29985e3b160a2718bf6069762e05e"
     },
     "g923-mac-bridge/sdk-lab/tools/game_sandbox.py": {
       "bytes": 8381,
@@ -913,9 +913,9 @@
       "sha256": "3f405a4254eda76a25abf325d808bcb2e7feba51ab40640bb806fb7ff7ab97bd"
     },
     "g923-mac-bridge/vendor/crossover-ffb/Sources/CrossoverFFBApp/GameDashboard.swift": {
-      "bytes": 13566,
+      "bytes": 13550,
       "mode": "0644",
-      "sha256": "4fe0e892acc9a77e593c954c31f968e02b9f63b2f0dda77a7758a6543989859e"
+      "sha256": "acdd3d371d5c95284b1cd20f572fa157e70ef2bd9b05f76abbac1ee9701de520"
     },
     "g923-mac-bridge/vendor/crossover-ffb/Sources/CrossoverFFBApp/GamePreferences.swift": {
       "bytes": 5041,
@@ -1013,9 +1013,9 @@
       "sha256": "de47d115fcda69d42bc1678d984e93aa1f47a0f49c27f5f973dafa70935c05a8"
     },
     "g923-mac-bridge/vendor/crossover-ffb/Sources/WheelCore/MesconTelemetryGame.swift": {
-      "bytes": 2199,
+      "bytes": 2191,
       "mode": "0644",
-      "sha256": "94f2615c689a8c21712dda038d7b110ec78fd68175ac8a7324d795f40ad6fe09"
+      "sha256": "c9f536ee0a90e64ae1e1e2fedb002bede25394ac95585a97995c39cdc0889f45"
     },
     "g923-mac-bridge/vendor/crossover-ffb/Sources/WheelCore/NativeTrueForceGame.swift": {
       "bytes": 4331,
@@ -1628,9 +1628,9 @@
       "sha256": "b71bd43a069ca0641a9ecfe585ca7b3c53b5cc1608f8b68321168698e28b5ea1"
     },
     "mescon-telemetry/README.md": {
-      "bytes": 3074,
+      "bytes": 3071,
       "mode": "0644",
-      "sha256": "8dba34861ea0fce8ccad2c27cd2f27d389a57fd4dc3ac5c5370cbe39dba725f6"
+      "sha256": "c12086b29db410613078ad5aaccf15ccf8c4df33b38fd51e4519569a8e3c7c5e"
     },
     "mescon-telemetry/UPSTREAM.json": {
       "bytes": 1383,

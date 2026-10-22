@@ -69,7 +69,7 @@ class PortableBackendTests(unittest.TestCase):
                 # Never rename or overwrite an independently installed mod.
                 self.assertEqual((game.parent / 'dinput8.dll').read_bytes(), b'new mod')
 
-    def test_optional_dlaa_absence_and_component_hashes_are_checked(self):
+    def test_optional_library_absence_and_component_hashes_are_checked(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp); profile = self.profile(root)
             session = Path(profile['session_dir']); session.mkdir(parents=True)
