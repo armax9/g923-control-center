@@ -1,0 +1,230 @@
+{
+  "verified_on": "2026-10-20",
+  "platform": "Windows PC",
+  "capability_is_not_bridge_acceptance": true,
+  "games": [
+    {
+      "steam_app_id": 805550,
+      "name": "Assetto Corsa Competizione",
+      "aliases": [],
+      "executables": [
+        "AC2/Binaries/Win64/AC2-Win64-Shipping.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/805550/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": true
+    },
+    {
+      "steam_app_id": 3058630,
+      "name": "Assetto Corsa EVO",
+      "aliases": [],
+      "executables": [
+        "AssettoCorsaEVO.exe"
+      ],
+      "source": "https://assettocorsa.gg/wp-content/uploads/acevo_wheel-setup-guide.pdf",
+      "steam_identity_source": "https://store.steampowered.com/app/3058630/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": true
+    },
+    {
+      "steam_app_id": 1066890,
+      "name": "Automobilista 2",
+      "aliases": [],
+      "executables": [
+        "AMS2AVX.exe",
+        "AMS2.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/1066890/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 284160,
+      "name": "BeamNG.drive",
+      "aliases": [
+        "BeamNG Drive"
+      ],
+      "executables": [
+        "Bin64/BeamNG.drive.x64.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/284160/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 690790,
+      "name": "DiRT Rally 2.0",
+      "aliases": [],
+      "executables": [
+        "dirtrally2.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/690790/",
+      "user_gameplay_accepted_on_this_mac": true,
+      "sdk_installer_available": true
+    },
+    {
+      "steam_app_id": 1849250,
+      "name": "EA Sports WRC",
+      "aliases": [],
+      "executables": [
+        "WRC/Binaries/Win64/WRC.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/1849250/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 1692250,
+      "name": "F1 22",
+      "aliases": [],
+      "executables": [
+        "F1_22.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/1692250/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 2108330,
+      "name": "F1 23",
+      "aliases": [],
+      "executables": [
+        "F1_23.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/2108330/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 2488620,
+      "name": "F1 24",
+      "aliases": [],
+      "executables": [
+        "F1_24.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/2488620/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 3059520,
+      "name": "F1 25",
+      "aliases": [],
+      "executables": [
+        "F1_25.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/3059520/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 2440510,
+      "name": "Forza Motorsport (2023)",
+      "aliases": [
+        "Forza Motorsport"
+      ],
+      "executables": [],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/2440510/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 703860,
+      "name": "GRID (2019)",
+      "aliases": [
+        "GRID"
+      ],
+      "executables": [],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/703860/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 266410,
+      "name": "iRacing",
+      "aliases": [],
+      "executables": [
+        "iRacingSim64DX11.exe"
+      ],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/266410/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 1209360,
+      "name": "Monster Truck Championship",
+      "aliases": [],
+      "executables": [],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/1209360/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 958400,
+      "name": "Project CARS 3",
+      "aliases": [],
+      "executables": [],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/958400/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 1465360,
+      "name": "SnowRunner",
+      "aliases": [],
+      "executables": [],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/1465360/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 1249970,
+      "name": "Test Drive Unlimited Solar Crown",
+      "aliases": [],
+      "executables": [],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/1249970/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 1462810,
+      "name": "WRC 10",
+      "aliases": [
+        "WRC 10 FIA World Rally Championship"
+      ],
+      "executables": [],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/1462810/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    },
+    {
+      "steam_app_id": 1953520,
+      "name": "WRC Generations",
+      "aliases": [
+        "WRC Generations – The FIA WRC Official Game"
+      ],
+      "executables": [],
+      "source": "https://www.logitechg.com/en-us/products/driving/g923-trueforce-sim-racing-wheel.html",
+      "steam_identity_source": "https://store.steampowered.com/app/1953520/",
+      "user_gameplay_accepted_on_this_mac": false,
+      "sdk_installer_available": false
+    }
+  ]
+}

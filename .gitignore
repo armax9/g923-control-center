@@ -1,12 +1,14 @@
-# Build output
-.build/
-.swiftpm/
-bridge/build/
-dist/
-
-# macOS
-.DS_Store
-
-# Local notes and logs that should never be published
+# Generated outputs and local user data
+**/build/
+**/.build/
+**/dist/
+**/.cache/
+**/__pycache__/
+**/work/
+**/private/
+**/captures/
+**/logs/
+*.py[cod]
 *.log
-/private/
+*.bin
+.DS_Store

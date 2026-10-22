@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://github.com/mescon/logitech-trueforce-linux-driver",
+    "commit": "972274bdce293419c058eb10b796feb232bfd9ef"
+  },
+  {
+    "url": "https://github.com/WATERMELOUN3/FreeTheWheel",
+    "commit": "69c638fbc76ce6c70eb6426f5fea1f75bd6def51"
+  },
+  {
+    "url": "https://github.com/ivonunes/wheelio",
+    "commit": "b869065082c2918189c300edd8c2e5154baf82a6"
+  },
+  {
+    "url": "https://github.com/renaudallard/macoswheels",
+    "commit": "a207b718dd94e852a2bce92e96c9ee7211620bdf"
+  },
+  {
+    "url": "https://github.com/0xbiel/crossover-ffb",
+    "commit": "65a9685f85908e01dc3c8ca91f84dc49a1329c0f",
+    "purpose": "Optional complete base, synthetic TF; not native SDK implementation"
+  }
+]

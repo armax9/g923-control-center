@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "builds": [
+    {
+      "id": "cx-preview-27.0.0.41069-wine-11.17",
+      "name": "G923 TRUEFORCE transport for CrossOver Preview 27.0.0.41069",
+      "product_version": "27.0.0.41069",
+      "build_timestamp": "20261006T113703Z",
+      "wine_version": "11.17",
+      "license": "LGPL-2.1-or-later",
+      "source": {
+        "url": "https://github.com/wine-mirror/wine",
+        "tag": "wine-11.17",
+        "commit": "36b6a2cf679fb395f668a917b76537190e212d9c",
+        "archive_url": "https://github.com/wine-mirror/wine/archive/refs/tags/wine-11.17.tar.gz",
+        "archive_sha256": "8dde1acf3b7b702d911127edae5bad3a4683f6dd8c87e725e0379cb842fb1e0e",
+        "patch": "winebus-11.17-g923-trueforce.patch",
+        "patch_sha256": "ae5e9f041502d57eb373cbdb6f9e38c983c9e4651e6908c2ff04df5bb99a1630",
+        "notice_patch": "winebus-11.17-g923-change-notices.patch",
+        "bundle": "sources/g923-wine-11.17-source.tar.xz",
+        "license_file": "sources/COPYING.LIB",
+        "build_script": "scripts/build-wine-transport.py"
+      },
+      "original_module_hashes": {
+        "x86_64-unix/winebus.so": "2826a5f9f3ebab4d011b63bb5afe24025b9e9fb294f82557645eb2bc16ebb21e",
+        "x86_64-windows/winebus.sys": "09594bcc90bd55935f5f07a887efaee362ac800b3ba15ca7eb2809eb142ec1ce"
+      },
+      "modules": {
+        "x86_64-unix/winebus.so": {
+          "path": "cx-preview-27.0.0.41069-wine-11.17/winebus.so",
+          "sha256": "b8d60dce48b6fb768eb50e41950ffbfa99d29fb63e2d03dd764c338438f1453c"
+        },
+        "x86_64-windows/winebus.sys": {
+          "path": "cx-preview-27.0.0.41069-wine-11.17/winebus.sys",
+          "sha256": "ecaf49c5ccea05ddad1d626f414ea9f761eb48bdf51e21c1f74512f7cd7146d8"
+        }
+      },
+      "acceptance": {
+        "wheel": "Logitech G923 PlayStation / PC",
+        "game": "DiRT Rally 2.0",
+        "date": "2026-10-20",
+        "scope": "User-confirmed game TRUEFORCE and FFB with the original Logitech SDK. Other CrossOver builds require separate compatibility review."
+      }
+    }
+  ]
+}

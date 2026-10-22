@@ -1,0 +1,11 @@
+/build/
+*.bin
+*.log
+.DS_Store
+
+__pycache__/
+/sdk-lab/private/
+/vendor/crossover-ffb/.build/
+/vendor/crossover-ffb/dist/
+
+/work/

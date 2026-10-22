@@ -1,0 +1,20 @@
+--- a/dlls/winebus.sys/bus_iohid.c
++++ b/dlls/winebus.sys/bus_iohid.c
+@@ -1,4 +1,7 @@
+ /*  Bus like function for mac HID devices
++ *
++ * G923 Control Center changes, 2026-10-20: admit the G923 TRUEFORCE
++ * vendor collection and supply its USB interface metadata.
+  *
+  * Copyright 2016 CodeWeavers, Aric Stewart
+  *
+--- a/dlls/winebus.sys/main.c
++++ b/dlls/winebus.sys/main.c
+@@ -1,4 +1,7 @@
+ /*
++ * G923 Control Center changes, 2026-10-20: share the Windows device
++ * container among the HID interfaces of one physical G923 USB wheel.
++ *
+  * WINE Platform native bus driver
+  *
+  * Copyright 2016 Aric Stewart

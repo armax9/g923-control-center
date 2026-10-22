@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/mescon/logitech-trueforce-linux-driver",
+  "commit": "972274bdce293419c058eb10b796feb232bfd9ef",
+  "license": "GPL-2.0-only",
+  "synth_rs": "unmodified original EngineSynth, standalone process only",
+  "scs_plugin_rs": "Original plugin, local relay module instead of whole Linux core crate; same SCS callback ABI; Windows cross compilation",
+  "boundary": "Separate executable and game plugin; no GPL-2.0-only code is linked into the GPL-3 bridge. IPC is loopback UDP.",
+  "additional_unmodified_modules": {
+    "telemetry": "5ada2e60d84c51e074f9e65c1987aa73295f46ba7162cc8f275893fd3c1fdf93",
+    "codemasters": "ab403827696e1d7d02a7b76a69ab2778a5dea0c333be9edcc1205d1e1fdff324",
+    "pcars": "ba811753ff3577ac446304e454b67e986c004cb1aca1458d64c47f0dcef80cef",
+    "beamng": "28d94fe254917a937edc8975b9523c6e19918229cc6fc06752cf2705f0ce582c",
+    "f1": "9997c525e3534144dec8d29a68d62f0c084dca3da60d0cd61136692f12004e2a",
+    "wrc": "fc30a7648fe0bf7375da74c261d5f89749123ce15e32192631584df3beb3f22f",
+    "effects": "5808c9fb1a5f1eb39dc7cbedcee9158e84f95c6c0416158ea10c09559c4f5e84"
+  },
+  "macos_sources": [
+    "relay",
+    "codemasters",
+    "pcars",
+    "beamng",
+    "f1",
+    "wrc"
+  ],
+  "windows_relay": "Upstream decoders and CLI; local relay wire module, windows-sys replaced with equivalent Kernel32 FFI for standalone rustc builds"
+}

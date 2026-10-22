@@ -1,0 +1,28 @@
+{
+  "source": "https://raw.githubusercontent.com/wine-mirror/wine/840a939ee526137639665ff5f587224d6a36403f/dlls/winebus.sys/bus_iohid.c",
+  "commit": "840a939ee526137639665ff5f587224d6a36403f",
+  "status": "Compiled in isolated upstream Wine 11.20; real FFFD:FD01 HID inventory confirmed; not applied to installed CrossOver",
+  "license": "LGPL-2.1-or-later (Wine source context)",
+  "source_archive_sha256": "f5cc4e16e322e0dc19369eea285017f4719befd71f33e10bc0b06fbca78e46d3",
+  "experimental_build": "make -j4 completed successfully; wine --version = wine-11.20",
+  "toolchain": {
+    "release": "llvm-mingw 20260505 ucrt macos universal",
+    "url": "https://github.com/mstorsjo/llvm-mingw/releases/tag/20260505",
+    "sha256": "050379de888f0c843787819dadf183df3693330a5724643919e9121f16355295"
+  },
+  "hardware_inventory": {
+    "vid": "046d",
+    "pid": "c266",
+    "usage_page": "fffd",
+    "usage": "fd01",
+    "input_bytes": 64,
+    "output_bytes": 64,
+    "read_only_probe": true
+  },
+  "sdk_available": {
+    "samples": 120,
+    "true": 120,
+    "closed": true,
+    "torque_stream_api_calls": 0
+  }
+}

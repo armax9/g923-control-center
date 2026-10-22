@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/teosemi/CrossFFB",
+  "commit": "5ea4eac1e41fc743191e9e007c59abe2ea4f28d6",
+  "files": {
+    "LICENSE": "05e4f20d417695d0b751e7b42e48f60723a79cc6e653d1d227b3add4d346560c",
+    "README.md": "006084587b437521237c0821b564c724a151ea25d5dfca942d9383f1cece3398",
+    "native_bridge/g29_ffb_bridge.c": "53901c49b6eede482abc1058be67565e92c14902a0970ee8e6410bc786ba701a",
+    "dinput8_proxy/dinput8.cpp": "79d224446cc09eb569f8301bbd99080e7312eda58676c8f3cf9db3b853b60fbe"
+  }
+}

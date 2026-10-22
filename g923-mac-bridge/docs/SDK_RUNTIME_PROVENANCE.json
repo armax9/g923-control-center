@@ -1,0 +1,18 @@
+{
+  "recorded_on": "2026-10-19",
+  "scope": "Static inventory of the original Windows SDK used by the accepted G923 PlayStation setup. Gameplay acceptance is recorded separately in the release support matrix.",
+  "source": "User-installed Logitech G HUB in Windows 11 / Parallels",
+  "file": {
+    "name": "trueforce_sdk_x64.dll",
+    "version": "1.3.12",
+    "architecture": "x86_64",
+    "windows_path": "C:\\Program Files\\Logi\\Trueforce\\1_3_12\\trueforce_sdk_x64.dll",
+    "bytes": 930456,
+    "sha256": "2468bdafe64c09ff42ef26f09e49f2096321bb687467323aafb3f0672fb83315",
+    "guest_host_hash_match": true,
+    "exports": 75,
+    "certificate_table_present": true
+  },
+  "redistributed": false,
+  "download_note": "The official G HUB download may contain a different SDK version. This record does not describe every G HUB installer."
+}

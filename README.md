@@ -1,172 +1,74 @@
-<p align="center">
-  <img src="docs/images/menu.png" width="352" alt="crossover-ffb menu bar dropdown">
-</p>
+# G923 Control Center
 
-<h1 align="center">crossover-ffb</h1>
+**Native TRUEFORCE in DiRT Rally 2.0 and emulated engine vibration in ETS2, with ordinary Force Feedback, on macOS Apple Silicon and CrossOver.**
 
-<p align="center">
-  <b>Force feedback and TrueForce for Logitech wheels in Windows racing games on macOS.</b><br>
-  For games running through CrossOver, NotProton or Wine.
-</p>
+An open-source control center for Logitech G923 PlayStation / PC, based on [crossover-ffb](https://github.com/0xbiel/crossover-ffb). Current source preview: **0.6.2**.
 
----
+Download the source preview and complete Wine source from [Releases](https://github.com/armax9/g923-control-center/releases). Build instructions are below.
 
-Windows sims run well on Apple Silicon through Wine, but the wheel arrives dead: no force
-feedback, sometimes no wheel at all. crossover-ffb fixes that. It's a small menu bar app plus
-a Windows DLL that it installs into your games for you. The game sees a normal Logitech G923,
-and its forces reach the real wheel on your Mac.
+## What works
 
-- **Force feedback.** Constant forces, springs, dampers, friction, periodic effects and
-  envelopes, played on the motor at about 500 Hz.
-- **Simulated TrueForce.** Engine, road texture, kerbs, tyre slip and ABS, generated from the
-  game's telemetry and streamed to the G923's TrueForce motor channel at 4 kHz.
-- **One-click install.** The app finds your games on any disk (internal, SSD, external) in
-  Steam + NotProton, CrossOver bottles, or any Wine prefix. **Uninstall** restores exactly what
-  was there before.
-- **G HUB-style wheel settings.** Operating range from 40° to 900°, steering and pedal
-  sensitivity curves, a centering spring, combined pedals, and rev lights driven by the game's rpm.
-- **Lives in the menu bar.** No Dock icon. A full Settings window has the game library,
-  force-feedback and TrueForce tuning, and a live input view.
+| Game | TRUEFORCE | Tested on G923 PlayStation |
+| --- | --- | --- |
+| DiRT Rally 2.0 | Native game effects through the original Logitech TRUEFORCE SDK | TRUEFORCE, ordinary FFB, steering, three pedals and H-pattern shifter |
+| Euro Truck Simulator 2 | Emulated engine vibration from SCS telemetry and the mescon synthesizer | Engine vibration alongside ordinary FFB, steering resistance/return, impacts and input |
 
-<p align="center">
-  <img src="docs/images/library.png" width="820" alt="Library page in the Settings window">
-</p>
+Native TRUEFORCE carries the game's Logitech SDK signal. Emulation generates engine harmonics from RPM and throttle and sends them through the wheel's high-frequency output. ETS2 steering and road forces still come from the game's ordinary FFB.
 
-## Compatibility
+ETS2 preserves an existing DLAA `dinput8.dll`. Its steering FFB and engine intensity have separate controls. **Engine intensity defaults to 10% and can be adjusted while driving**, without restarting the bridge. Zero mutes the engine vibration.
 
-| | Status |
-|---|---|
-| **Wheels** | Logitech **G923** (PlayStation/PC, `046d:c266`): tested. Logitech **G29** (`046d:c24f`): force feedback should work but is untested. TrueForce is G923 only. |
-| **macOS** | 13 Ventura or later on Apple Silicon. Liquid Glass styling on macOS 26. |
-| **Runners** | Steam games through **NotProton**, **CrossOver** bottles (including Steam inside a bottle), any other Wine prefix via **Add Game** |
-| **Games** | Any **64-bit** game that reads its wheel through **DirectInput 8**, which covers most PC sims |
+## Tested setup
 
-| Game | Force feedback | TrueForce |
-|---|---|---|
-| Assetto Corsa Competizione | ✅ tested | ✅ full (telemetry) |
-| Assetto Corsa EVO | ✅ tested | ✅ full (telemetry) |
-| Assetto Corsa | should work | full (telemetry) |
-| Automobilista 2, rFactor 2, Le Mans Ultimate, RaceRoom, BeamNG.drive | should work | FFB only, no extra detail |
+- Logitech G923 PlayStation / PC, three pedals and Logitech H-pattern shifter.
+- M3 Max Mac, macOS 27.0.1.
+- CrossOver Preview **27.0.0.41069**, patched Wine **11.17** transport.
+- Original Logitech TRUEFORCE SDK **1.3.12 x64** from Windows G HUB.
+- Windows DiRT Rally 2.0 and ETS2 through Steam in CrossOver.
 
-"Should work" means the game uses DirectInput 8 but nobody has reported on it yet. If you try
-one, please [file a game report](../../issues/new?template=game-report.md). Games that only
-use XInput or raw HID, and 32-bit games, aren't supported.
+Both game paths were confirmed by the user in gameplay. Other wheels, CrossOver 26 and a clean installation on a second Mac have not been tested. Live engine adjustment has software and localhost-stream verification; it is not an additional hardware test.
 
-## Install
+## Use
 
-1. Download `crossover-ffb-<version>.dmg` from [Releases](../../releases/latest), open it
-   and drag **crossover-ffb** to Applications.
-2. The app is not notarized. The first time, right-click it and choose **Open** (or allow it
-   in System Settings › Privacy & Security).
-3. A steering wheel icon appears in the menu bar. If the app asks for **Input Monitoring**,
-   allow crossover-ffb in System Settings › Privacy & Security › Input Monitoring. It needs
-   this to read your wheel.
+1. Connect the wheel to USB and its power supply. Open **G923 Control Center**.
+2. The bridge starts automatically. Check its status in the sidebar, then select your game.
+3. Complete the installation steps below if components are missing.
+4. Open Steam and launch the game yourself. Choose VR or desktop mode in Steam as usual.
+5. Select G923 in the game, assign the pedals if needed and calibrate the wheel.
+6. In DiRT, scroll down in **Vibration & Feedback** to **Enable TRUEFORCE** and the separate **Logitech TRUEFORCE Engine / Surface / Tyre Slip** controls.
+7. In ETS2, change **Engine intensity** on the app's game page, including during a drive. Change **FFB strength** with the game closed; 100% preserves the game's original strength.
 
-To remove it, uninstall the bridge from each game in the Library, then delete the app.
+Closing Settings keeps the menu-bar app and bridge running. Opening Settings shows its Dock icon. Logs stay in the background.
 
-## Set up a game
+## Install native TRUEFORCE
 
-1. Open **Settings › Library**. Your games appear by themselves. If one is missing, press
-   **Add Game** and pick its `.exe`. For a Steam + NotProton game, launch it once first so its
-   Wine prefix exists.
-2. Quit the game and press **Install**.
-3. Once, with no game running and your hands off the wheel: **Settings › Force Feedback ›
-   Detect**. This learns which way your motor turns.
-4. Start the game, pick **"G923 Racing Wheel for PlayStation and PC"** in its controls, and
-   calibrate. The menu shows the game as connected and the force meter moves.
-5. If the wheel pushes *away* from centre in corners, turn on **Reverse game force direction**.
+Select DiRT and use its **Native TRUEFORCE setup** card:
 
-For ACC, the default G923 preset already matches the layout: steering axis 0, throttle 1,
-brake 5, clutch 6.
+1. **Import SDK…** — open **Get Logitech G HUB** and **SDK instructions**. Install Windows G HUB in Windows or Parallels, copy `C:\Program Files\Logi\Trueforce\1_3_12\trueforce_sdk_x64.dll` to the Mac, then import it. The app accepts the verified **1.3.12 x64** DLL. G HUB versions may contain a different SDK; see the [SDK guide](g923-mac-bridge/docs/LOGITECH_SDK_SETUP.md).
+2. **Install transport** — the app checks your CrossOver build and prepares a private runtime with the matching patched Wine modules. The current catalog supports the tested Preview build above.
+3. **Install game integration** — exit Steam and games first. The app places and registers the SDK in the bottle and activates its transport. Reopen Steam normally afterward.
 
-### Steering wheel settings
+The card shows SDK, transport and game integration status separately. **Refresh status** checks the installation. **Wine source & build guide** opens an in-app guide; **Open source folder** opens the complete Wine source package, patches, licenses and build script.
 
-<img src="docs/images/wheel.png" width="560" align="right" alt="Steering Wheel settings">
+For ETS2, select the game and use **Install components** if needed. Setup preserves the DLAA loader and uses separate bridge and telemetry files.
 
-**Settings › Steering Wheel** has the options Logitech G HUB offers for the G923 and G29,
-which G HUB can't provide under Wine:
+## Other games
 
-- **Operating range**, 40° to 900°, with presets for 180°, 270°, 360°, 540°, 720° and 900°.
-  The wheel reports full steering over that angle and holds a soft stop at the ends.
-- **Sensitivity**, a response curve where 50 is linear. The same curve is available for each pedal.
-- **Centering spring**, for games without force feedback, optionally on top of the game's own forces.
-- **Torque** and **audio effects**, which are the force-feedback and TrueForce strengths.
-- **Combined pedals**, which put the accelerator and brake on one axis for older games.
-- **Rev lights**. The LEDs fill up with the engine's rpm and flash at the limiter
-  (Assetto Corsa, ACC and AC EVO).
+The source includes additional native TRUEFORCE recognition and telemetry adapters. Their game pages show **Untested** or **Integration pending**. Automatic profiles and gameplay acceptance currently cover DiRT and ETS2. See the [support matrix](g923-mac-bridge/docs/publication/SUPPORT.md).
 
-<br clear="right">
+## Build and source
 
-### TrueForce
+See [Build and setup](g923-mac-bridge/docs/publication/BUILD_AND_SETUP.md) for dependencies and commands, and the [Wine transport guide](g923-mac-bridge/docs/WINE_TRANSPORT_SOURCE.md) for the pinned source and future ports.
 
-<img src="docs/images/trueforce.png" width="560" align="right" alt="TrueForce settings">
+The app discovers CrossOver/Preview, bottles and Steam libraries, including external disks. It bundles its tools and open-source payloads; Python 3.10 or newer is required on the Mac. Installation profiles live in Application Support.
 
-Real TrueForce needs Logitech G HUB and Logitech's SDK inside the game, and neither runs under
-Wine. crossover-ffb simulates it instead. The bridge copies the game's physics telemetry into
-shared memory, and the app turns it into a haptic signal: engine firing pulses that follow rpm
-and throttle, suspension and road texture, kerb rumble, tyre-slip judder and ABS pulses.
+The Logitech SDK and commercial CrossOver runtime are user-supplied. They are not included in public source or downloads. New Wine/CrossOver builds need a separately validated transport pair.
 
-- Turn it on in the menu, and set the mix in **Settings › TrueForce**.
-- In game, pause, let go of the wheel and press **Detect** once to learn the stream's direction.
-- Games without telemetry still get normal force feedback through the TrueForce stream.
-- If the wheel stops responding after a crash, unplug its power for a few seconds.
+## Credits and licenses
 
-<br clear="right">
+- [crossover-ffb](https://github.com/0xbiel/crossover-ffb): MIT app and DirectInput bridge base.
+- [mescon/logitech-trueforce-linux-driver](https://github.com/mescon/logitech-trueforce-linux-driver): engine synthesis and protocol research. Its GPL-2.0-only synthesizer runs as a separate process.
+- [Wheelio](https://github.com/ivonunes/wheelio): GPLv3 FFB/proxy subtree.
+- [CrossFFB](https://github.com/teosemi/CrossFFB): MIT classic FFB reference.
+- [Wine](https://www.winehq.org/): LGPL transport source and patches.
 
-## How it works
-
-```
- game (Wine) ──DirectInput 8──► dinput8.dll ──shared memory──► crossover-ffb.app ──USB HID──► wheel
-             ◄── virtual G923 ◄──────── input ◄─────────────────── input ◄──────────────
-```
-
-- The installer copies `dinput8.dll` next to the game's .exe and adds a per-game
-  `dinput8 = native,builtin` override to the Wine prefix. Any DLL or override that was already
-  there is backed up and put back on uninstall.
-- The DLL presents a virtual **"G923 Racing Wheel for PlayStation and PC"** with Logitech's
-  name and IDs, so in-game presets apply. It uses the standard layout: X steering, Y
-  throttle, Rz brake, Slider clutch, 25 buttons and a D-pad. Keyboards, mice and other
-  controllers pass through to Wine's own dinput8.
-- Effects the game creates are mirrored to the app over shared memory
-  (`/tmp/crossover-ffb-<uid>/ffb-v2.bin`, see [bridge/SHARED-MEMORY.md](bridge/SHARED-MEMORY.md)).
-  The app computes them against live wheel motion and drives the motor.
-- The DLL is written freestanding: it imports only KERNEL32, and it writes a log,
-  `crossover-ffb-observe.log`, next to the game's .exe.
-
-## Safety
-
-The motor is driven only while a game is connected and polling, with a heartbeat of 500 ms or
-less. Paused or stalled games, Stop commands, quitting the app and unplugging all zero the
-force. If the app is force-killed while a game holds a force, the wheel can keep that force
-until you unplug it. Strength defaults to 80%. Keep your hands clear when running **Detect**.
-
-## Building from source
-
-```sh
-brew install llvm lld   # cross-compiles the Windows DLL
-./scripts/package-app   # tests and builds the DLL, then dist/crossover-ffb.app and a .dmg
-```
-
-Requires Xcode 26 (Swift 6). See [CONTRIBUTING.md](CONTRIBUTING.md) for tests, the
-diagnostic CLI (`crossover-ffb games`, `bridge-probe`, `trueforce-probe`) and the code layout.
-
-## Contributing
-
-Reports from other games and wheels are the most useful help right now. See
-[CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Credits
-
-- TrueForce protocol facts come from the public notes of
-  [mescon/logitech-trueforce-linux-driver](https://github.com/mescon/logitech-trueforce-linux-driver).
-- Classic Logitech force-feedback commands were cross-checked against
-  [berarma/new-lg4ff](https://github.com/berarma/new-lg4ff).
-
-All code here is original. No driver or SDK code was copied.
-
-## License
-
-[MIT](LICENSE).
-
-crossover-ffb is not affiliated with Logitech, Kunos Simulazioni, CodeWeavers or Valve. Logitech,
-G923, G29 and TrueForce are trademarks of Logitech. Game names and artwork belong to their owners.
+Project integration code is GPL-3.0-only. Component licenses and modification notices remain attached; see [NOTICE](g923-mac-bridge/NOTICE.md) and [LICENSE](g923-mac-bridge/LICENSE).
